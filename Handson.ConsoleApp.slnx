@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Handson.ConsoleApp/Handson.ConsoleApp.csproj" />
+  <Project Path="Handson.Core/Handson.Core.csproj" />
+</Solution>
