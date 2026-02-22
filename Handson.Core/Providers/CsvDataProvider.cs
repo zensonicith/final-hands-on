@@ -1,29 +1,41 @@
 ﻿using System.Globalization;
 using CsvHelper;
+using Handson.Core.Settings;
+using Microsoft.Extensions.Options;
 
 namespace Handson.Core.Providers
 {
     public class CsvDataProvider : IDataProvider
     {
         private readonly string _filePath;
-        public CsvDataProvider(string filePath)
+        public CsvDataProvider(IOptions<StorageSettings> options)
         {
-            _filePath = filePath;
+            string storagePath = options.Value.StoragePath;
+            string fileName = options.Value.FileName.First();
+            _filePath = Path.Combine(storagePath, fileName);
         }
-        public async Task<IEnumerable<T>> GetDataAsync<T>()
+
+        public async Task<IEnumerable<T>> GetDataAsync<T>(CancellationToken token)
         {
-            if (!File.Exists(_filePath))
-                throw new FileNotFoundException($"File not found: {_filePath}");
-
-            List<T> records = new List<T>();
-            using var reader = new StreamReader(_filePath);
-            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
-
-            await foreach (var record in csv.GetRecordsAsync<T>())
+            try
             {
-                records.Add(record);
+                if (!File.Exists(_filePath))
+                    throw new FileNotFoundException($"File not found: {_filePath}");
+
+                List<T> records = new List<T>();
+                using var reader = new StreamReader(_filePath);
+                using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
+                await foreach (var record in csv.GetRecordsAsync<T>())
+                {
+                    records.Add(record);
+                }
+                return records;
             }
-            return records;
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
         }
     }
 }

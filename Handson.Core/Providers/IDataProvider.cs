@@ -6,6 +6,6 @@ namespace Handson.Core.Providers
 {
     public interface IDataProvider
     {
-        Task<IEnumerable<T>> GetDataAsync<T>();
+        Task<IEnumerable<T>> GetDataAsync<T>(CancellationToken token);
     }
 }
