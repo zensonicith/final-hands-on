@@ -1,0 +1,55 @@
+Timestamp,Source,Metric,Value
+2026-02-23 11:00:48,CSV,AvgPrice_furnished,5495696.00
+2026-02-23 11:00:48,CSV,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:00:48,CSV,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:01:43,API,GlobalAvgPrice,219.25
+2026-02-23 11:01:59,JSON,TotalStock,1648
+2026-02-23 11:02:21,CSV,AvgPrice_furnished,5495696.00
+2026-02-23 11:02:21,CSV,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:02:21,CSV,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:14:25,CSV,AvgPrice_furnished,5495696.00
+2026-02-23 11:14:25,CSV,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:14:25,CSV,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:14:46,CSV,Average house price by furnishing,AvgPrice_furnished,5495696.00
+2026-02-23 11:14:46,CSV,Average house price by furnishing,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:14:46,CSV,Average house price by furnishing,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:15:02,API,Top premium product,PremiumProduct_Annibale Colombo Bed,1899.99
+2026-02-23 11:15:30,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 11:15:30,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 11:15:30,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 11:15:30,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99
+2026-02-23 11:58:10,CSV,Average house price by furnishing,AvgPrice_null,13300000.00
+2026-02-23 11:58:10,CSV,Average house price by furnishing,AvgPrice_furnished,5439549.93
+2026-02-23 11:58:10,CSV,Average house price by furnishing,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:58:10,CSV,Average house price by furnishing,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:58:55,CSV,Average house price by furnishing,AvgPrice_null,13300000.00
+2026-02-23 11:58:55,CSV,Average house price by furnishing,AvgPrice_furnished,5439549.93
+2026-02-23 11:58:55,CSV,Average house price by furnishing,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:58:55,CSV,Average house price by furnishing,AvgPrice_semi-furnished,4907524.23
+2026-02-23 11:59:57,CSV,Average house price by furnishing,AvgPrice_null,13300000.00
+2026-02-23 11:59:57,CSV,Average house price by furnishing,AvgPrice_furnished,5439549.93
+2026-02-23 11:59:57,CSV,Average house price by furnishing,AvgPrice_unfurnished,4013831.46
+2026-02-23 11:59:57,CSV,Average house price by furnishing,AvgPrice_semi-furnished,4907524.23
+2026-02-23 12:00:30,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 12:00:30,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 12:00:30,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 12:00:30,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99
+2026-02-23 12:00:30,JSON,Best seller products by category,null_Essence Mascara Lash Princess,9.99
+2026-02-23 12:00:37,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 12:00:37,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 12:00:37,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 12:00:37,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99
+2026-02-23 12:00:37,JSON,Best seller products by category,null_Essence Mascara Lash Princess,9.99
+2026-02-23 12:01:14,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 12:01:14,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 12:01:14,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 12:01:14,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99
+2026-02-23 12:01:36,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 12:01:36,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 12:01:36,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 12:01:36,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99
+2026-02-23 12:01:36,JSON,Best seller products by category,null_Essence Mascara Lash Princess,9.99
+2026-02-23 12:01:48,JSON,Best seller products by category,groceries_Kiwi,2.49
+2026-02-23 12:01:48,JSON,Best seller products by category,furniture_Knoll Saarinen Executive Conference Chair,499.99
+2026-02-23 12:01:48,JSON,Best seller products by category,beauty_Powder Canister,14.99
+2026-02-23 12:01:48,JSON,Best seller products by category,fragrances_Calvin Klein CK One,49.99

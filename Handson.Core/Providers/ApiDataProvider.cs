@@ -19,10 +19,12 @@ namespace Handson.Core.Providers
         {
             try
             {
-                var response = await _httpClient.GetAsync(_url);
+                var response = await _httpClient.GetAsync(_url, token);
                 response.EnsureSuccessStatusCode();
 
-                var jsonString = await response.Content.ReadAsStringAsync();
+                var jsonString = await response.Content.ReadAsStringAsync(token);
+
+                token.ThrowIfCancellationRequested();
 
                 if (string.IsNullOrWhiteSpace(jsonString))
                 {
@@ -43,7 +45,11 @@ namespace Handson.Core.Providers
 
                 return Enumerable.Empty<T>();
             }
-            catch(OperationCanceledException)
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception)
             {
                 throw;
             }

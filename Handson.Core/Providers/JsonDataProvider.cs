@@ -1,5 +1,6 @@
 ﻿using Handson.Core.Settings;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Handson.Core.Providers;
@@ -21,26 +22,32 @@ public class JsonDataProvider : IDataProvider
 
         try
         {
-            using var reader = new StreamReader(_filePath);
-            string body = await reader.ReadToEndAsync(token);
+            string json = await File.ReadAllTextAsync(_filePath, token);
+            var jToken = JToken.Parse(json);
 
-            var jToken = JToken.Parse(body);
-
-            if (jToken is JObject obj && obj.ContainsKey("products"))
+            if (jToken is JObject obj)
             {
-                return obj["products"].ToObject<IEnumerable<T>>() ?? [];
+                var arrayValue = obj.Properties().FirstOrDefault(
+                    p => p.Value.Type == JTokenType.Array
+                )?.Value;
+
+                return arrayValue?.ToObject<List<T>>() ?? new List<T>();
             }
 
-            if (jToken is JArray array)
-            {
-                return array.ToObject<IEnumerable<T>>() ?? [];
-            }
+            return jToken.ToObject<List<T>>() ?? new List<T>();
 
-            return Enumerable.Empty<T>();
         }
         catch (OperationCanceledException)
         {
             throw;
         }
+    }
+
+    private static bool HasRequiredFields<T>(T record)
+    {
+        if (record == null) return false;
+
+        return record.GetType().GetProperties().All(p => p.GetValue(record) != null);
+
     }
 }

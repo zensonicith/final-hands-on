@@ -15,10 +15,10 @@ namespace Handson.Core.Models
         public int Bedrooms { get; set; }
 
         [Name("furnishingstatus")]
-        public string FurnishingStatus { get; set; }
+        public required string FurnishingStatus { get; set; }
 
         [Name("airconditioning")]
-        public string AirConditioning { get; set; }
+        public required string AirConditioning { get; set; }
 
         [Name("parking")]
         public int Parking { get; set; }

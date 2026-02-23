@@ -18,11 +18,11 @@ public class ProviderFactory : IProviderFactory
 
     public IDataProvider Create()
     {
-        if (_providerOptions.CurrentValue.Equals("CSV"))
+        if (_providerOptions.CurrentValue.ProviderType.Equals("CSV"))
         {
             return _sp.GetRequiredService<CsvDataProvider>();
         }
-        else if (_providerOptions.CurrentValue.Equals("JSON"))
+        else if (_providerOptions.CurrentValue.ProviderType.Equals("JSON"))
         {
             return _sp.GetRequiredService<JsonDataProvider>();
         }

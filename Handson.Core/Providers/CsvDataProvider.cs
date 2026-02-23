@@ -26,7 +26,7 @@ namespace Handson.Core.Providers
                 using var reader = new StreamReader(_filePath);
                 using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
 
-                await foreach (var record in csv.GetRecordsAsync<T>())
+                await foreach (var record in csv.GetRecordsAsync<T>(token))
                 {
                     records.Add(record);
                 }
